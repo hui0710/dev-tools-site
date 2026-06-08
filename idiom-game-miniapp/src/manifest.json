@@ -1,0 +1,28 @@
+{
+  "name": "成语答题大挑战",
+  "appid": "",
+  "description": "成语答题大挑战微信小程序",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    "permission": {
+      "scope.writePhotosAlbum": {
+        "desc": "保存成绩卡到相册"
+      }
+    }
+  },
+  "h5": {
+    "title": "成语答题大挑战",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}

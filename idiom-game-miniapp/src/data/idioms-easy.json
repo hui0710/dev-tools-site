@@ -1,0 +1,454 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "画___添___",
+      "options": ["蛇", "足", "龙", "虎", "鸟", "翼"],
+      "answer": "画蛇添足",
+      "explanation": "比喻做了多余的事，反而不恰当"
+    },
+    {
+      "id": 2,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "守___待___",
+      "options": ["株", "兔", "树", "鹿", "井", "鱼"],
+      "answer": "守株待兔",
+      "explanation": "比喻不主动努力，存在侥幸心理"
+    },
+    {
+      "id": 3,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___然大___",
+      "options": ["恍", "悟", "怡", "自", "梦", "雷"],
+      "answer": "恍然大悟",
+      "explanation": "形容一下子明白过来"
+    },
+    {
+      "id": 4,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___羊补___",
+      "options": ["亡", "牢", "死", "圈", "跑", "栏"],
+      "answer": "亡羊补牢",
+      "explanation": "比喻出了问题以后想办法补救，可以防止继续受损失"
+    },
+    {
+      "id": 5,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "对___弹___",
+      "options": ["牛", "琴", "马", "鼓", "鸡", "笛"],
+      "answer": "对牛弹琴",
+      "explanation": "比喻对不讲道理的人讲道理或说话不看对象"
+    },
+    {
+      "id": 6,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "狐___虎___",
+      "options": ["假", "威", "借", "势", "欺", "猛"],
+      "answer": "狐假虎威",
+      "explanation": "比喻依仗别人的势力欺压人"
+    },
+    {
+      "id": 7,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___公移___",
+      "options": ["愚", "山", "老", "石", "精", "土"],
+      "answer": "愚公移山",
+      "explanation": "比喻坚持不懈地改造自然和坚定不移地进行斗争"
+    },
+    {
+      "id": 8,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___竽充___",
+      "options": ["滥", "数", "混", "军", "假", "编"],
+      "answer": "滥竽充数",
+      "explanation": "比喻没有本领的人冒充有本领，占着位置混饭吃"
+    },
+    {
+      "id": 9,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "掩___盗___",
+      "options": ["耳", "铃", "目", "钟", "口", "鼓"],
+      "answer": "掩耳盗铃",
+      "explanation": "比喻自己欺骗自己"
+    },
+    {
+      "id": 10,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "叶公好___",
+      "options": ["龙", "虎", "凤", "马", "鹤", "鱼"],
+      "answer": "叶公好龙",
+      "explanation": "比喻表面上爱好某事物，实际上并不真正爱好"
+    },
+    {
+      "id": 11,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "刻舟求___",
+      "options": ["剑", "鱼", "宝", "珠", "针", "船"],
+      "answer": "刻舟求剑",
+      "explanation": "比喻拘泥不变，不根据情况的变化处理问题"
+    },
+    {
+      "id": 12,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___底之___",
+      "options": ["井", "蛙", "河", "鱼", "天", "鸟"],
+      "answer": "井底之蛙",
+      "explanation": "比喻见识狭小的人"
+    },
+    {
+      "id": 13,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "自相___ ___",
+      "options": ["矛", "盾", "争", "斗", "残", "杀"],
+      "answer": "自相矛盾",
+      "explanation": "比喻自己的言行前后抵触"
+    },
+    {
+      "id": 14,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___弓蛇___",
+      "options": ["杯", "影", "弓", "形", "剑", "迹"],
+      "answer": "杯弓蛇影",
+      "explanation": "比喻因疑神疑鬼而引起恐惧"
+    },
+    {
+      "id": 15,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "___翁失___",
+      "options": ["塞", "马", "边", "驴", "老", "牛"],
+      "answer": "塞翁失马",
+      "explanation": "比喻一时虽然受到损失，也许反而因此能得到好处"
+    },
+    {
+      "id": 16,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "画___点___",
+      "options": ["龙", "睛", "蛇", "足", "虎", "须"],
+      "answer": "画龙点睛",
+      "explanation": "比喻写文章或说话时，在关键处加上精辟的话，使内容更加生动"
+    },
+    {
+      "id": 17,
+      "type": "fill",
+      "difficulty": 1,
+      "question": "望___止___",
+      "options": ["梅", "渴", "花", "饿", "果", "饥"],
+      "answer": "望梅止渴",
+      "explanation": "比喻愿望无法实现，用空想安慰自己"
+    },
+    {
+      "id": 18,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容非常高兴，高兴得手脚都舞动起来",
+      "options": ["手舞足蹈", "眉飞色舞", "喜出望外", "欢天喜地"],
+      "answer": "手舞足蹈",
+      "explanation": "形容非常高兴，高兴得手脚都舞动起来"
+    },
+    {
+      "id": 19,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻一个人在众人中特别突出",
+      "options": ["鹤立鸡群", "出类拔萃", "卓尔不群", "脱颖而出"],
+      "answer": "鹤立鸡群",
+      "explanation": "比喻一个人的才能或仪表超群出众"
+    },
+    {
+      "id": 20,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻做事之前已经有了充分的准备和把握",
+      "options": ["胸有成竹", "未雨绸缪", "运筹帷幄", "成竹在胸"],
+      "answer": "胸有成竹",
+      "explanation": "比喻做事之前已经有了充分的准备和把握"
+    },
+    {
+      "id": 21,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻平时没有表现，一行动就做出惊人的成绩",
+      "options": ["一鸣惊人", "一飞冲天", "出人意料", "异军突起"],
+      "answer": "一鸣惊人",
+      "explanation": "比喻平时没有表现，一行动就做出惊人的成绩"
+    },
+    {
+      "id": 22,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻从一件事情类推而知道其他许多事情",
+      "options": ["举一反三", "触类旁通", "融会贯通", "闻一知十"],
+      "answer": "举一反三",
+      "explanation": "比喻从一件事情类推而知道其他许多事情"
+    },
+    {
+      "id": 23,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容回答问话像流水一样流利",
+      "options": ["对答如流", "滔滔不绝", "口若悬河", "伶牙俐齿"],
+      "answer": "对答如流",
+      "explanation": "形容回答问话像流水一样流利，口才好，反应快"
+    },
+    {
+      "id": 24,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻粗略地观察事物，不深入细致",
+      "options": ["走马观花", "蜻蜓点水", "浮光掠影", "浅尝辄止"],
+      "answer": "走马观花",
+      "explanation": "比喻粗略地观察事物，不深入细致"
+    },
+    {
+      "id": 25,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻开头声势很大，后来劲头很小，有始无终",
+      "options": ["虎头蛇尾", "有始无终", "半途而废", "雷声大雨点小"],
+      "answer": "虎头蛇尾",
+      "explanation": "比喻开头声势很大，后来劲头很小，有始无终"
+    },
+    {
+      "id": 26,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容射箭或射击非常准确，每次都命中目标",
+      "options": ["百发百中", "百步穿杨", "箭无虚发", "弹无虚发"],
+      "answer": "百发百中",
+      "explanation": "形容射箭或射击非常准确，每次都命中目标"
+    },
+    {
+      "id": 27,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻说话或写文章一开始就直入主题，不拐弯抹角",
+      "options": ["开门见山", "直截了当", "单刀直入", "一针见血"],
+      "answer": "开门见山",
+      "explanation": "比喻说话或写文章一开始就直入主题，不拐弯抹角"
+    },
+    {
+      "id": 28,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容做事犹豫不决，又想这样又想那样",
+      "options": ["三心二意", "优柔寡断", "犹豫不决", "左顾右盼"],
+      "answer": "三心二意",
+      "explanation": "形容做事犹豫不决，又想这样又想那样"
+    },
+    {
+      "id": 29,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻做事中途停止，不能坚持到底",
+      "options": ["半途而废", "功亏一篑", "前功尽弃", "浅尝辄止"],
+      "answer": "半途而废",
+      "explanation": "比喻做事中途停止，不能坚持到底"
+    },
+    {
+      "id": 30,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻同类的东西聚集在一起",
+      "options": ["物以类聚", "同流合污", "沆瀣一气", "臭味相投"],
+      "answer": "物以类聚",
+      "explanation": "比喻同类的东西聚集在一起"
+    },
+    {
+      "id": 31,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容遇到意想不到的好事而特别高兴",
+      "options": ["喜出望外", "手舞足蹈", "心花怒放", "欢天喜地"],
+      "answer": "喜出望外",
+      "explanation": "形容遇到意想不到的好事而特别高兴"
+    },
+    {
+      "id": 32,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "比喻在别人急需的时候给予帮助",
+      "options": ["雪中送炭", "锦上添花", "扶危济困", "慷慨解囊"],
+      "answer": "雪中送炭",
+      "explanation": "比喻在别人急需的时候给予帮助"
+    },
+    {
+      "id": 33,
+      "type": "meaning",
+      "difficulty": 1,
+      "question": "形容数量很多，数也数不清",
+      "options": ["数不胜数", "不计其数", "成千上万", "浩如烟海"],
+      "answer": "数不胜数",
+      "explanation": "形容数量很多，数也数不清"
+    },
+    {
+      "id": 34,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "一个人抓住旁边的东西，悄悄把羊牵走了",
+      "options": ["顺手牵羊", "偷鸡摸狗", "趁火打劫", "浑水摸鱼"],
+      "answer": "顺手牵羊",
+      "explanation": "比喻趁便拿走别人的东西"
+    },
+    {
+      "id": 35,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "火上正在烧着东西，又有人往上面浇油",
+      "options": ["火上浇油", "雪上加霜", "推波助澜", "落井下石"],
+      "answer": "火上浇油",
+      "explanation": "比喻使事态更加严重"
+    },
+    {
+      "id": 36,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "河水退去了，水底的石头露了出来",
+      "options": ["水落石出", "真相大白", "原形毕露", "拨云见日"],
+      "answer": "水落石出",
+      "explanation": "比喻事情的真相完全显露出来"
+    },
+    {
+      "id": 37,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "一个人在草丛中走动，蛇被惊动逃走了",
+      "options": ["打草惊蛇", "引蛇出洞", "惊弓之鸟", "草木皆兵"],
+      "answer": "打草惊蛇",
+      "explanation": "比喻做事不密，致使对方有了警觉和防范"
+    },
+    {
+      "id": 38,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "用很小的材料做很大的用途，大木头只做了个小凳子",
+      "options": ["大材小用", "杀鸡用牛刀", "小题大做", "得不偿失"],
+      "answer": "大材小用",
+      "explanation": "比喻把大的材料当成小的来用，使用不当"
+    },
+    {
+      "id": 39,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "九头牛身上只拔了一根毛，微不足道",
+      "options": ["九牛一毛", "沧海一粟", "微不足道", "屈指可数"],
+      "answer": "九牛一毛",
+      "explanation": "比喻极大数量中极微小的一部分"
+    },
+    {
+      "id": 40,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "水流的方向和船行方向相同，船很轻松地前行",
+      "options": ["顺水推舟", "趁势而上", "随波逐流", "因势利导"],
+      "answer": "顺水推舟",
+      "explanation": "比喻顺应情势说话办事"
+    },
+    {
+      "id": 41,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "大鸟展翅高飞，飞向远方的天际",
+      "options": ["鹏程万里", "大展宏图", "一飞冲天", "扶摇直上"],
+      "answer": "鹏程万里",
+      "explanation": "比喻前程远大"
+    },
+    {
+      "id": 42,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "医生根据病人的症状开出对应的药方",
+      "options": ["对症下药", "有的放矢", "量体裁衣", "因地制宜"],
+      "answer": "对症下药",
+      "explanation": "比喻针对具体情况决定解决问题的办法"
+    },
+    {
+      "id": 43,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "东边倒一个西边歪一个，站都站不稳",
+      "options": ["东倒西歪", "七扭八歪", "摇摇欲坠", "岌岌可危"],
+      "answer": "东倒西歪",
+      "explanation": "形容不稳，要倒下来的样子"
+    },
+    {
+      "id": 44,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "心里乐开了花，满脸笑容",
+      "options": ["心花怒放", "喜笑颜开", "眉开眼笑", "欢天喜地"],
+      "answer": "心花怒放",
+      "explanation": "形容心里高兴到了极点"
+    },
+    {
+      "id": 45,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "一箭射出，两只大雕同时从空中坠落",
+      "options": ["一箭双雕", "一举两得", "一石二鸟", "事半功倍"],
+      "answer": "一箭双雕",
+      "explanation": "比喻做一件事达到两个目的"
+    },
+    {
+      "id": 46,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "面对大海感叹自己的渺小",
+      "options": ["望洋兴叹", "自愧不如", "叹为观止", "甘拜下风"],
+      "answer": "望洋兴叹",
+      "explanation": "比喻做事力量不够或条件缺乏而感到无可奈何"
+    },
+    {
+      "id": 47,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "一匹马当先，跑在所有马的前面",
+      "options": ["一马当先", "首当其冲", "身先士卒", "独占鳌头"],
+      "answer": "一马当先",
+      "explanation": "比喻走在最前面"
+    },
+    {
+      "id": 48,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "鱼儿跃出水面，跳过了高高的龙门",
+      "options": ["鱼跃龙门", "力争上游", "奋发图强", "鲤鱼跳龙门"],
+      "answer": "鱼跃龙门",
+      "explanation": "比喻举业成功或地位高升"
+    },
+    {
+      "id": 49,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "老虎瞪大眼睛盯着猎物，等待时机下手",
+      "options": ["虎视眈眈", "蓄势待发", "伺机而动", "磨刀霍霍"],
+      "answer": "虎视眈眈",
+      "explanation": "形容恶狠狠地盯着，等待时机下手"
+    },
+    {
+      "id": 50,
+      "type": "picture",
+      "difficulty": 1,
+      "question": "龙在飞腾凤在起舞，气势非凡",
+      "options": ["龙飞凤舞", "龙腾虎跃", "凤舞九天", "气势磅礴"],
+      "answer": "龙飞凤舞",
+      "explanation": "形容书法笔势有力，灵活舒展"
+    }
+  ]
+}
