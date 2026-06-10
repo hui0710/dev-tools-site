@@ -261,9 +261,11 @@ function goBack() {
 
 <style lang="scss" scoped>
 .pk-page {
-  min-height: 100vh;
+  height: 100%;
   background: $color-bg;
   padding: 32rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .pk-header {

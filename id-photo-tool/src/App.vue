@@ -56,6 +56,8 @@
             :model-loading="modelLoading"
             :model-progress="modelProgress"
             :removing="removing"
+            :processing-step="processingStep"
+            :processing-step-text="processingStepText"
           />
         </div>
 
@@ -147,8 +149,7 @@
 
         <!-- 免责声明 -->
         <div class="text-center text-xs text-gray-400 mb-4">
-          <p>免责声明：本工具所有照片处理均在您的浏览器本地完成，不会上传至任何服务器。</p>
-          <p class="mt-1">请确保您拥有上传照片的合法使用权。生成的证件照仅供参考，正式用途请以官方要求为准。</p>
+          <p>免责声明：本工具仅供个人使用，照片处理均在浏览器本地完成，不会上传至任何服务器。</p>
         </div>
 
         <!-- Google AdSense预留 -->
@@ -173,6 +174,7 @@ import BeautySlider from './components/BeautySlider.vue'
 import LayoutPreview from './components/LayoutPreview.vue'
 import DownloadPanel from './components/DownloadPanel.vue'
 import { usePhoto } from './composables/usePhoto'
+import { onMounted } from 'vue'
 
 const {
   selectedSize,
@@ -190,11 +192,19 @@ const {
   modelLoading,
   modelProgress,
   removing,
+  processingStep,
+  processingStepText,
   sizes,
   bgColors,
   handleUpload,
   downloadSingle,
   downloadLayout,
-  reset
+  reset,
+  preloadModel
 } = usePhoto()
+
+// 页面加载后立即预加载AI模型
+onMounted(() => {
+  preloadModel()
+})
 </script>

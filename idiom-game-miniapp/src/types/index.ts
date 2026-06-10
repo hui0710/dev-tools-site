@@ -39,8 +39,8 @@ export interface GameState {
   maxCombo: number
   /** 总得分 */
   totalScore: number
-  /** 答错是否已复活（每关/每局一次） */
-  hasRevived: boolean
+  /** 答错复活次数（第一次答错免费复活，第二次需看广告） */
+  reviveCount: number
   /** 游戏是否结束 */
   isFinished: boolean
   /** 开始时间戳 */

@@ -75,15 +75,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "static/tabbar/tab-home.png",
+        "selectedIconPath": "static/tabbar/tab-home-active.png"
       },
       {
         "pagePath": "pages/rank/rank",
-        "text": "排行"
+        "text": "排行",
+        "iconPath": "static/tabbar/tab-rank.png",
+        "selectedIconPath": "static/tabbar/tab-rank-active.png"
       },
       {
         "pagePath": "pages/mine/mine",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "static/tabbar/tab-mine.png",
+        "selectedIconPath": "static/tabbar/tab-mine-active.png"
       }
     ]
   }

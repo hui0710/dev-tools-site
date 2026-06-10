@@ -8,17 +8,46 @@
       <div v-if="isProcessing || removing || modelLoading" class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center z-10">
         <div class="animate-spin w-10 h-10 border-4 border-white border-t-transparent rounded-full mb-4"></div>
 
-        <!-- 模型加载进度 -->
-        <div v-if="modelLoading" class="w-48">
-          <p class="text-white text-sm text-center mb-2">正在加载AI模型...</p>
-          <div class="h-2 bg-white/30 rounded-full overflow-hidden">
-            <div class="h-full bg-primary rounded-full transition-all" :style="{ width: (modelProgress * 100) + '%' }"></div>
+        <!-- 步骤式进度提示 -->
+        <div class="w-64">
+          <!-- 主提示文字 -->
+          <p class="text-white text-sm text-center mb-3 font-medium">{{ processingStepText }}</p>
+
+          <!-- 步骤指示器 -->
+          <div class="flex items-center justify-center gap-1 mb-3">
+            <div
+              v-for="(step, idx) in steps"
+              :key="idx"
+              class="flex items-center"
+            >
+              <div
+                class="w-6 h-6 rounded-full flex items-center justify-center text-xs transition-all duration-300"
+                :class="getStepClass(idx)"
+              >
+                <svg v-if="getStepStatus(idx) === 'done'" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                <span v-else>{{ idx + 1 }}</span>
+              </div>
+              <div v-if="idx < steps.length - 1" class="w-4 h-0.5 mx-0.5 rounded" :class="getStepStatus(idx) === 'done' ? 'bg-green-400' : 'bg-white/30'"></div>
+            </div>
+          </div>
+
+          <!-- 步骤标签 -->
+          <div class="flex justify-between text-[10px] text-white/60 px-0.5">
+            <span>加载模型</span>
+            <span>处理图片</span>
+            <span>合成背景</span>
+          </div>
+
+          <!-- 模型加载进度条 -->
+          <div v-if="modelLoading" class="mt-3">
+            <div class="h-1.5 bg-white/30 rounded-full overflow-hidden">
+              <div class="h-full bg-primary rounded-full transition-all duration-300" :style="{ width: (modelProgress * 100) + '%' }"></div>
+            </div>
+            <p class="text-white/50 text-[10px] text-center mt-1">首次加载需下载模型，请稍候...</p>
           </div>
         </div>
-
-        <p v-else class="text-white text-sm">
-          {{ removing ? 'AI抠图处理中...' : '处理中...' }}
-        </p>
       </div>
 
       <!-- 预览图 -->
@@ -52,14 +81,47 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { PhotoSize } from '../types'
+import type { ProcessingStep } from '../composables/useBackground'
 
-defineProps<{
+const props = defineProps<{
   previewUrl: string
   size: PhotoSize
   isProcessing: boolean
   modelLoading: boolean
   modelProgress: number
   removing: boolean
+  processingStep: ProcessingStep
+  processingStepText: string
 }>()
+
+const steps = ['load', 'process', 'composite'] as const
+
+/** 根据当前processingStep获取步骤索引 */
+const currentStepIndex = computed(() => {
+  switch (props.processingStep) {
+    case 'loading-model': return 0
+    case 'processing-image': return 1
+    case 'compositing': return 2
+    default: return -1
+  }
+})
+
+function getStepStatus(idx: number): 'done' | 'active' | 'pending' {
+  const current = currentStepIndex.value
+  if (current < 0) return 'pending'
+  if (idx < current) return 'done'
+  if (idx === current) return 'active'
+  return 'pending'
+}
+
+function getStepClass(idx: number): string {
+  const status = getStepStatus(idx)
+  switch (status) {
+    case 'done': return 'bg-green-500 text-white'
+    case 'active': return 'bg-primary text-white ring-2 ring-white/50'
+    case 'pending': return 'bg-white/30 text-white/60'
+  }
+}
 </script>

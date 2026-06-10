@@ -96,9 +96,11 @@ function medalEmoji(rank: number): string {
 
 <style lang="scss" scoped>
 .rank-page {
-  min-height: 100vh;
+  height: 100%;
   background: $color-bg;
   padding-bottom: 120rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .rank-header {

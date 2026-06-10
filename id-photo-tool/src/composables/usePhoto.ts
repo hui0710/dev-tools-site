@@ -7,10 +7,13 @@ import {
   removeBackground,
   compositeWithBackground,
   canvasToDataURL,
-  canvasToBlob,
   modelLoading,
   modelProgress,
-  removing
+  removing,
+  processingStep,
+  initModel,
+  clearForegroundCache,
+  type ProcessingStep
 } from './useBackground'
 import { calcLayout, generateLayoutCanvas, getLayoutCount } from './useLayout'
 
@@ -51,6 +54,21 @@ const hasImage = computed(() => !!originalImage.value)
 const currentLayout = computed(() => calcLayout(selectedSize.value))
 const layoutPhotoCount = computed(() => getLayoutCount(currentLayout.value))
 
+/** 获取处理步骤的中文描述 */
+const processingStepText = computed(() => {
+  const step = processingStep.value
+  switch (step) {
+    case 'loading-model': return '正在加载AI模型...'
+    case 'processing-image': return '正在处理图片...'
+    case 'compositing': return '合成背景中...'
+    default:
+      if (removing.value) return 'AI抠图处理中...'
+      if (modelLoading.value) return '正在加载AI模型...'
+      if (isProcessing.value) return '处理中...'
+      return ''
+  }
+})
+
 // ─── 核心处理函数 ───
 
 /** 加载图片 */
@@ -72,11 +90,14 @@ async function handleUpload(file: File) {
     const img = await loadImage(file)
     originalImage.value = img
     originalBlob.value = file
+
+    // 清除旧的抠图缓存
+    clearForegroundCache()
     foregroundBitmap.value = null
 
-    // 自动抠图
+    // 自动抠图 - 传入图片尺寸用于压缩和缓存
     try {
-      const bitmap = await removeBackground(file)
+      const bitmap = await removeBackground(file, img.naturalWidth, img.naturalHeight)
       foregroundBitmap.value = bitmap
     } catch (e) {
       console.warn('Background removal failed, using original:', e)
@@ -89,6 +110,7 @@ async function handleUpload(file: File) {
     error.value = e.message || '图片加载失败'
   } finally {
     isProcessing.value = false
+    processingStep.value = 'idle'
   }
 }
 
@@ -96,6 +118,11 @@ async function handleUpload(file: File) {
 function renderPreview() {
   const source = foregroundBitmap.value || originalImage.value
   if (!source) return
+
+  // 标记合成步骤
+  if (isProcessing.value) {
+    processingStep.value = 'compositing'
+  }
 
   const size = selectedSize.value
   const bgColor = selectedBgColor.value
@@ -183,6 +210,7 @@ function reset() {
   beautyParams.value = { ...DEFAULT_BEAUTY }
   enableLayout.value = false
   error.value = null
+  clearForegroundCache()
 }
 
 // ─── 监听变化自动重渲染 ───
@@ -200,6 +228,13 @@ watch(enableLayout, (val) => {
     layoutCanvas.value = null
   }
 })
+
+/** 预加载模型 */
+function preloadModel() {
+  initModel().catch(() => {
+    // 预加载失败不影响用户使用，上传时会再次尝试
+  })
+}
 
 export function usePhoto() {
   return {
@@ -223,6 +258,8 @@ export function usePhoto() {
     modelLoading,
     modelProgress,
     removing,
+    processingStep,
+    processingStepText,
 
     // 配置
     sizes: PHOTO_SIZES,
@@ -234,6 +271,7 @@ export function usePhoto() {
     renderLayout,
     downloadSingle,
     downloadLayout,
-    reset
+    reset,
+    preloadModel
   }
 }

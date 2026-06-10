@@ -8,8 +8,10 @@ onLaunch(() => {
 
 <style lang="scss">
 page {
+  height: 100%;
   background-color: $color-bg;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden;
 }
 </style>

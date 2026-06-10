@@ -226,7 +226,12 @@ function processAnswer(isCorrect: boolean) {
     if (isCorrect) {
       goNext()
     } else {
-      if (!gameStore.state.hasRevived) {
+      if (gameStore.state.reviveCount === 0) {
+        // 第一次答错免费复活
+        gameStore.revive()
+        goNext()
+      } else if (gameStore.state.reviveCount === 1) {
+        // 第二次答错，显示"看广告复活"选项
         showAdDialog.value = true
       } else {
         goNext()
@@ -279,8 +284,10 @@ function onSkipAd() {
 
 <style lang="scss" scoped>
 .level-page {
-  min-height: 100vh;
+  height: 100%;
   background: $color-bg;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .level-header {

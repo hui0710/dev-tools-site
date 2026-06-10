@@ -43,7 +43,8 @@ const currentTool = computed(() => tools.find((t) => t.path === route.path))
     </aside>
 
     <footer class="mt-12 border-t border-gray-200 py-6 text-center text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
-      <p>© 2024 开发者在线工具集合 - 免费前端开发工具，纯前端计算，数据安全</p>
+      <p>本站工具仅供开发参考使用，不保证结果的绝对准确性。</p>
+      <p class="mt-2">© 2024 开发者在线工具集合 - 免费前端开发工具，纯前端计算，数据安全</p>
     </footer>
   </div>
 </template>

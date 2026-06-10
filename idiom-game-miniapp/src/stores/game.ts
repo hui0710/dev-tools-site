@@ -12,7 +12,7 @@ function createDefaultState(): GameState {
     combo: 0,
     maxCombo: 0,
     totalScore: 0,
-    hasRevived: false,
+    reviveCount: 0,
     isFinished: false,
     startTime: 0,
     elapsedTime: 0
@@ -80,7 +80,7 @@ export const useGameStore = defineStore('game', () => {
 
   /** 复活（答错后看广告继续） */
   function revive() {
-    state.value.hasRevived = true
+    state.value.reviveCount++
     // 答错的题不算，移除最后一题的记录
     saveState()
   }

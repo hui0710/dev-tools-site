@@ -34,9 +34,11 @@
     <!-- picture 看图猜题 -->
     <view v-else-if="question.type === 'picture'" class="question-content picture-content">
       <view class="picture-scene">
+        <view class="picture-scene__icon">🎬</view>
+        <view class="picture-scene__label">场景描述</view>
         <text class="picture-desc">{{ question.question }}</text>
       </view>
-      <view class="meaning-hint">请根据描述猜成语</view>
+      <view class="picture-hint">请根据描述猜成语</view>
     </view>
   </view>
 </template>
@@ -199,9 +201,28 @@ function onSlotTap(idx: number) {
 
   .picture-scene {
     background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    border-radius: 16rpx;
-    padding: 40rpx 32rpx;
+    border-radius: 20rpx;
+    padding: 36rpx 32rpx 40rpx;
     margin-bottom: 16rpx;
+    border: 2rpx solid #fcd34d;
+    position: relative;
+    overflow: hidden;
+
+    &__icon {
+      font-size: 56rpx;
+      margin-bottom: 12rpx;
+    }
+
+    &__label {
+      display: inline-block;
+      font-size: 22rpx;
+      color: #92400e;
+      background: rgba(146, 64, 14, 0.12);
+      padding: 4rpx 20rpx;
+      border-radius: 20rpx;
+      margin-bottom: 20rpx;
+      font-weight: 600;
+    }
   }
 
   .picture-desc {
@@ -209,9 +230,11 @@ function onSlotTap(idx: number) {
     line-height: 1.8;
     color: #92400e;
     font-weight: 600;
+    display: block;
+    text-align: center;
   }
 
-  .meaning-hint {
+  .picture-hint {
     font-size: 26rpx;
     color: #9ca3af;
   }

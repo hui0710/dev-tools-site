@@ -60,6 +60,23 @@
         <text class="setting-label setting-label--danger">清除数据</text>
         <text class="setting-arrow">›</text>
       </view>
+
+      <button class="mine-setting-item feedback-btn" open-type="feedback">
+        <text class="setting-label">意见反馈</text>
+        <text class="setting-arrow">›</text>
+      </button>
+    </view>
+
+    <!-- 更多好玩工具 -->
+    <view class="mine-section">
+      <text class="mine-section-title">更多好玩工具</text>
+      <scroll-view scroll-x class="recommend-list">
+        <view class="recommend-card" v-for="item in recommendApps" :key="item.appId" @tap="navigateToApp(item)">
+          <text class="app-icon">{{ item.icon }}</text>
+          <text class="app-name">{{ item.name }}</text>
+          <text class="app-desc">{{ item.desc }}</text>
+        </view>
+      </scroll-view>
     </view>
 
     <!-- 关于 -->
@@ -68,6 +85,7 @@
       <view class="mine-about">
         <text class="about-text">成语答题大挑战 v1.0.0</text>
         <text class="about-text about-text--sub">每天学成语，涨知识</text>
+        <text class="disclaimer-text">题目内容仅供娱乐学习，如有错误欢迎反馈。</text>
       </view>
     </view>
   </view>
@@ -77,6 +95,40 @@
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
+
+/** 互推推荐数据 */
+const recommendApps = [
+  {
+    appId: 'wx_placeholder_cutout',
+    name: '抠图工具',
+    desc: '一键去除照片背景',
+    icon: '✂️',
+    path: 'pages/index/index'
+  },
+  {
+    appId: 'wx_placeholder_copywriting',
+    name: '文案助手',
+    desc: 'AI一键生成文案',
+    icon: '✍️',
+    path: 'pages/index/index'
+  }
+]
+
+/** 跳转其他小程序 */
+function navigateToApp(item: typeof recommendApps[0]) {
+  // #ifdef MP-WEIXIN
+  uni.navigateToMiniProgram({
+    appId: item.appId,
+    path: item.path,
+    fail: () => {
+      uni.showToast({ title: '暂未上线，敬请期待', icon: 'none' })
+    }
+  })
+  // #endif
+  // #ifndef MP-WEIXIN
+  uni.showToast({ title: '仅支持微信小程序', icon: 'none' })
+  // #endif
+}
 
 function clearData() {
   uni.showModal({
@@ -95,9 +147,11 @@ function clearData() {
 
 <style lang="scss" scoped>
 .mine-page {
-  min-height: 100vh;
+  height: 100%;
   background: $color-bg;
   padding: 32rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .mine-profile {
@@ -217,9 +271,68 @@ function clearData() {
   &--danger { color: $color-error; }
 }
 
+.feedback-btn {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f3f4f6;
+  width: 100%;
+  line-height: normal;
+  margin: 0;
+  font-size: inherit;
+  text-align: left;
+  background: transparent;
+
+  &::after {
+    display: none;
+  }
+}
+
 .setting-arrow {
   font-size: 36rpx;
   color: #d1d5db;
+}
+
+.recommend-list {
+  white-space: nowrap;
+  margin-top: 12rpx;
+}
+
+.recommend-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200rpx;
+  padding: 20rpx;
+  margin-right: 20rpx;
+  background: #f9fafb;
+  border-radius: 16rpx;
+  transition: all 0.2s;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.app-icon {
+  font-size: 56rpx;
+  margin-bottom: 8rpx;
+}
+
+.app-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4rpx;
+}
+
+.app-desc {
+  font-size: 22rpx;
+  color: #9ca3af;
+  white-space: normal;
+  text-align: center;
 }
 
 .mine-about {
@@ -237,5 +350,14 @@ function clearData() {
     color: #9ca3af;
     margin-top: 8rpx;
   }
+}
+
+.disclaimer-text {
+  display: block;
+  font-size: 22rpx;
+  color: #9ca3af;
+  margin-top: 12rpx;
+  line-height: 1.6;
+  text-align: center;
 }
 </style>

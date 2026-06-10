@@ -26,7 +26,7 @@
 
       <!-- 再来一局 -->
       <view v-if="mode === 'daily'" class="result-btn result-btn--replay" @tap="replayDaily">
-        <text class="result-btn-text result-btn-text--replay">再来一局（看广告）</text>
+        <text class="result-btn-text result-btn-text--replay">再来一局</text>
       </view>
 
       <!-- 继续闯关 -->
@@ -50,12 +50,10 @@ import { ref } from 'vue'
 import { onLoad } from '@dcloudio/uni-app'
 import { useUserStore } from '@/stores/user'
 import { useGameStore } from '@/stores/game'
-import { useAd } from '@/composables/useAd'
 import ScoreCard from '@/components/ScoreCard.vue'
 
 const userStore = useUserStore()
 const gameStore = useGameStore()
-const ad = useAd()
 
 const mode = ref('daily')
 const score = ref(0)
@@ -201,11 +199,8 @@ function shareToFriend() {
 }
 
 async function replayDaily() {
-  const success = await ad.showRewardAd()
-  if (success) {
-    gameStore.resetGame()
-    uni.redirectTo({ url: '/pages/daily/daily' })
-  }
+  gameStore.resetGame()
+  uni.redirectTo({ url: '/pages/daily/daily' })
 }
 
 function nextLevel() {
@@ -227,9 +222,11 @@ function formatTime(seconds: number): string {
 
 <style lang="scss" scoped>
 .result-page {
-  min-height: 100vh;
+  height: 100%;
   background: $color-bg;
   padding: 40rpx 32rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .result-actions {
